@@ -9,8 +9,6 @@ function App() {
     <>
       <h1 className="text-blue-800 font-bold text-2xl">Hello BSCS3A</h1>
       <Button />
-      <Button />
-      <Button />
     </>
   );
 }
