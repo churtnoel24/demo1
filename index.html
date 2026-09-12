@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="list"></div>
+
+</body>
+
+<script>
+    const list = document.getElementById("list");
+
+    // for(let i = 0; i<1000; i++){
+    //     const item = document.createElement("li");
+    //     item.textContent = "Item " + i;
+    //     list.appendChild(item);
+    // }
+
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(item => {
+                const title = document.createElement("h1");
+                title.textContent = item.title;
+
+                title.style.color = "blue";
+                title.style.fontSize = "24px";
+                title.style.marginBottom = "5px";
+
+                const user = document.createElement("h4");
+                user.textContent = item.userId;
+
+                user.style.color = "gray";
+                user.style.marginTop = "0";
+
+                list.appendChild(user);
+                list.appendChild(title);
+            });
+        });
+
+</script>
+
+</html>
